@@ -1,10 +1,8 @@
 using Content.Shared.Damage;
-using Robust.Shared.GameStates;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Bed.Components
+namespace Content.Server.Bed.Components
 {
-    [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
+    [RegisterComponent]
     public sealed partial class HealOnBuckleComponent : Component
     {
         /// <summary>
@@ -25,16 +23,8 @@ namespace Content.Shared.Bed.Components
         [DataField]
         public float SleepMultiplier = 3f;
 
-        /// <summary>
-        /// Next time that <see cref="Damage"/> will be applied.
-        /// </summary>
-        [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField, AutoNetworkedField]
         public TimeSpan NextHealTime = TimeSpan.Zero; //Next heal
 
-        /// <summary>
-        /// Action for the attached entity to be able to sleep.
-        /// </summary>
-        [DataField, AutoNetworkedField]
-        public EntityUid? SleepAction;
+        [DataField] public EntityUid? SleepAction;
     }
 }

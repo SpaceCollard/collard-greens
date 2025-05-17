@@ -19,7 +19,6 @@ namespace Content.Client.Ghost
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly PointLightSystem _pointLightSystem = default!;
         [Dependency] private readonly ContentEyeSystem _contentEye = default!;
-<<<<<<< HEAD
         // collard-GhostRespawn-start
         [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -33,9 +32,6 @@ namespace Content.Client.Ghost
             }
         }
         // collard-GhostRespawn-end
-=======
-        [Dependency] private readonly SpriteSystem _sprite = default!;
->>>>>>> upstream/master
 
         public int AvailableGhostRoleCount { get; private set; }
 
@@ -56,7 +52,7 @@ namespace Content.Client.Ghost
                 var query = AllEntityQuery<GhostComponent, SpriteComponent>();
                 while (query.MoveNext(out var uid, out _, out var sprite))
                 {
-                    _sprite.SetVisible((uid, sprite), value || uid == _playerManager.LocalEntity);
+                    sprite.Visible = value || uid == _playerManager.LocalEntity;
                 }
             }
         }
@@ -93,7 +89,7 @@ namespace Content.Client.Ghost
         private void OnStartup(EntityUid uid, GhostComponent component, ComponentStartup args)
         {
             if (TryComp(uid, out SpriteComponent? sprite))
-                _sprite.SetVisible((uid, sprite), GhostVisibility || uid == _playerManager.LocalEntity);
+                sprite.Visible = GhostVisibility || uid == _playerManager.LocalEntity;
         }
 
         private void OnToggleLighting(EntityUid uid, EyeComponent component, ToggleLightingActionEvent args)
@@ -176,7 +172,7 @@ namespace Content.Client.Ghost
         private void OnGhostState(EntityUid uid, GhostComponent component, ref AfterAutoHandleStateEvent args)
         {
             if (TryComp<SpriteComponent>(uid, out var sprite))
-                _sprite.LayerSetColor((uid, sprite), 0, component.Color);
+                sprite.LayerSetColor(0, component.Color);
 
             if (uid != _playerManager.LocalEntity)
                 return;
