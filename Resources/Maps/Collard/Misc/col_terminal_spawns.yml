@@ -4,8 +4,8 @@ meta:
   engineVersion: 257.0.2
   forkId: ""
   forkVersion: ""
-  time: 05/19/2025 12:20:06
-  entityCount: 1752
+  time: 05/19/2025 12:29:30
+  entityCount: 1768
 maps: []
 grids:
 - 1
@@ -1213,20 +1213,22 @@ entities:
     - type: Transform
       pos: 9.5,32.5
       parent: 1
-  - uid: 594
-    components:
-    - type: Transform
-      pos: 15.5,24.5
-      parent: 1
-  - uid: 595
-    components:
-    - type: Transform
-      pos: 15.5,31.5
-      parent: 1
   - uid: 596
     components:
     - type: Transform
       pos: -1.5,31.5
+      parent: 1
+  - uid: 1760
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 13.5,19.5
+      parent: 1
+  - uid: 1761
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,26.5
       parent: 1
 - proto: ArrivalsSpawnPointGeneral
   entities:
@@ -7188,6 +7190,17 @@ entities:
     - type: Transform
       pos: -0.5,17.5
       parent: 1
+- proto: PosterContrabandSmoke
+  entities:
+  - uid: 1762
+    components:
+    - type: MetaData
+      desc: Знак, обозначающий зону для курения.
+      name: зона для курения
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,32.5
+      parent: 1
 - proto: PosterLegitCleanliness
   entities:
   - uid: 361
@@ -7706,6 +7719,16 @@ entities:
     - type: Transform
       pos: 10.5,12.5
       parent: 1
+  - uid: 1757
+    components:
+    - type: Transform
+      pos: -8.5,10.5
+      parent: 1
+  - uid: 1758
+    components:
+    - type: Transform
+      pos: -8.5,11.5
+      parent: 1
 - proto: RandomSpawner
   entities:
   - uid: 343
@@ -8109,6 +8132,14 @@ entities:
     - type: Transform
       pos: -7.5,22.5
       parent: 1
+- proto: SignBar
+  entities:
+  - uid: 416
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,31.5
+      parent: 1
 - proto: SignCryo
   entities:
   - uid: 152
@@ -8116,6 +8147,30 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 5.5,8.5
+      parent: 1
+- proto: SignDirectionalDorms
+  entities:
+  - uid: 1755
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 9.5,12.5
+      parent: 1
+- proto: SignDirectionalEvac
+  entities:
+  - uid: 1759
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,16.5
+      parent: 1
+- proto: SignDirectionalWash
+  entities:
+  - uid: 1756
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 9.5,9.5
       parent: 1
 - proto: SignDisposalSpace
   entities:
@@ -8132,6 +8187,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 24.5,11.5
+      parent: 1
+- proto: SignKitchen
+  entities:
+  - uid: 415
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,24.5
       parent: 1
 - proto: SignLaundromat
   entities:
@@ -8243,6 +8306,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.5,8.5
       parent: 1
+- proto: SignReception
+  entities:
+  - uid: 1753
+    components:
+    - type: Transform
+      pos: -1.5,16.5
+      parent: 1
+  - uid: 1754
+    components:
+    - type: Transform
+      pos: 4.5,16.5
+      parent: 1
 - proto: SignRedFour
   entities:
   - uid: 353
@@ -8296,6 +8371,44 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 6.5,35.5
+      parent: 1
+- proto: SignSmoking
+  entities:
+  - uid: 1763
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,15.5
+      parent: 1
+  - uid: 1764
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,8.5
+      parent: 1
+  - uid: 1765
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,15.5
+      parent: 1
+  - uid: 1766
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,28.5
+      parent: 1
+  - uid: 1767
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,21.5
+      parent: 1
+  - uid: 1768
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,21.5
       parent: 1
 - proto: SinkStemlessWater
   entities:
@@ -9642,11 +9755,6 @@ entities:
     - type: Transform
       pos: -6.5,32.5
       parent: 1
-  - uid: 416
-    components:
-    - type: Transform
-      pos: -1.5,31.5
-      parent: 1
   - uid: 445
     components:
     - type: Transform
@@ -10847,6 +10955,18 @@ entities:
     - type: Transform
       pos: 9.5,31.5
       parent: 1
+  - uid: 594
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,31.5
+      parent: 1
+  - uid: 595
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,32.5
+      parent: 1
   - uid: 612
     components:
     - type: Transform
@@ -10942,12 +11062,6 @@ entities:
       parent: 1
 - proto: Window
   entities:
-  - uid: 415
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,32.5
-      parent: 1
   - uid: 417
     components:
     - type: Transform
@@ -10968,7 +11082,7 @@ entities:
       pos: 21.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2443.336
+      secondsUntilStateChange: -2643.949
       state: Opening
   - uid: 1574
     components:
@@ -10976,7 +11090,7 @@ entities:
       pos: 23.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2443.736
+      secondsUntilStateChange: -2644.349
       state: Opening
   - uid: 1575
     components:
@@ -10984,6 +11098,6 @@ entities:
       pos: 25.5,7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2444.2026
+      secondsUntilStateChange: -2644.8157
       state: Opening
 ...
