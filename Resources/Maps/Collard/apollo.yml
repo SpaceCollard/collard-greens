@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/28/2025 12:57:03
-  entityCount: 18269
+  time: 07/28/2025 17:09:17
+  entityCount: 18273
 maps:
 - 1
 grids:
@@ -476,12 +476,21 @@ entities:
             3433: 37,16
             6170: 6,10
             6171: 6,5
+            6377: -50,55
+            6378: -50,58
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: Arrows
           decals:
             6165: 50,22
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: Arrows
+          decals:
+            6379: -48,53
+            6380: -48,56
         - node:
             angle: 4.71238898038469 rad
             color: '#FFFFFFFF'
@@ -42452,6 +42461,11 @@ entities:
     - type: Transform
       pos: -6.5,12.5
       parent: 2
+  - uid: 18273
+    components:
+    - type: Transform
+      pos: 69.5,3.5
+      parent: 2
 - proto: DisposalJunction
   entities:
   - uid: 12328
@@ -42603,6 +42617,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 45.5,11.5
+      parent: 2
+  - uid: 17299
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 65.5,3.5
       parent: 2
   - uid: 17323
     components:
@@ -47233,12 +47253,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 65.5,2.5
       parent: 2
-  - uid: 17299
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 65.5,3.5
-      parent: 2
   - uid: 17300
     components:
     - type: Transform
@@ -47746,6 +47760,24 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -14.5,12.5
+      parent: 2
+  - uid: 18270
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 68.5,3.5
+      parent: 2
+  - uid: 18271
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 67.5,3.5
+      parent: 2
+  - uid: 18272
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 66.5,3.5
       parent: 2
 - proto: DisposalTrunk
   entities:
