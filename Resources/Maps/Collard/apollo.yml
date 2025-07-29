@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 07/29/2025 06:30:07
+  time: 07/29/2025 06:33:33
   entityCount: 18273
 maps:
 - 1
@@ -477,7 +477,7 @@ entities:
             6170: 6,10
             6171: 6,5
             6377: -50,55
-            6378: -50,58
+            6577: -50,58
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
@@ -6116,9 +6116,9 @@ entities:
             color: '#D4D4D496'
             id: PavementOverlay
           decals:
-            6414: -50,58
             6415: -48,58
             6416: -49,58
+            6576: -50,58
         - node:
             color: '#EFB34196'
             id: PavementOverlay
