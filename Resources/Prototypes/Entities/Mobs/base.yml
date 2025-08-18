@@ -65,8 +65,8 @@
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
+        damageType: Brute # collard-LifeValue
+        damage: 1000 # collard-LifeValue
       behaviors:
       - !type:GibBehavior { }
     - trigger:
