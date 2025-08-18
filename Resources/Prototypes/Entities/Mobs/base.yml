@@ -64,8 +64,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Brute # collard-LifeValue
+        !type:DamageGroupTrigger # collard-LifeValue
+        damageGroup: Brute # collard-LifeValue
         damage: 1000 # collard-LifeValue
       behaviors:
       - !type:GibBehavior { }
