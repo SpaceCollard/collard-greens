@@ -194,3 +194,45 @@
   name: Relanium - Leel Lost
   path:
     path: /Audio/Collard/Jukebox/leel.ogg
+
+- type: jukebox
+  id: AwareMe
+  name: MakSim - Знаешь ли ты
+  path:
+    path: /Audio/Collard/Jukebox/are_you_aware_jukebox.ogg
+
+- type: jukebox
+  id: Сaramelldansen
+  name: Caramella Girls - Caramelldansen
+  path:
+    path: /Audio/Collard/Jukebox/caramella_girls_caramelldansen_jukebox.ogg
+
+- type: jukebox
+  id: HardBass
+  name: Russian HardBass - Crazy Dance
+  path:
+    path: /Audio/Collard/Jukebox/hard_bass_jukebox.ogg
+
+- type: jukebox
+  id: LastStop
+  name: Karl Casey - Last Stop 
+  path:
+    path: /Audio/Collard/Jukebox/last_stop_jukebox.ogg
+
+- type: jukebox
+  id: LetMeWithYou
+  name: ApSent - Можно я с тобой 
+  path:
+    path: /Audio/Collard/Jukebox/let_me_with_you_jukebox.ogg
+
+- type: jukebox
+  id: Silentglow
+  name: Високосный год - Тихий огонёк
+  path:
+    path: /Audio/Collard/Jukebox/silent_glow_jukebox.ogg
+
+- type: jukebox
+  id: Tropico
+  name: Tropico - Tropico
+  path:
+    path: /Audio/Collard/Jukebox/tropico_jukebox.ogg
