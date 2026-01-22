@@ -40,7 +40,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             return;
 
         if (HasComp<MobStateComponent>(args.OtherEntity)) //collard-SavingThrows
-            if (_savingThrow.InitiateSilentSavingThrow(args.OtherEntity, component.SavingDifficulty)) return; //collard-SavingThrows
+            if (_savingThrow.InitiateSilentSavingThrowPredicted(args.OtherEntity, component.SavingDifficulty)) return; //collard-SavingThrows
 
         var target = args.OtherEntity;
         // it's here so this check is only done once before possible hit

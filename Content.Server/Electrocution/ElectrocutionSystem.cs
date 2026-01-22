@@ -4,6 +4,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Power.NodeGroups;
 using Content.Server.Weapons.Melee;
+using Content.Shared.Collard.Dice;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
@@ -54,6 +55,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly SavingThrowSystem _savingThrow = default!;
 
     private static readonly ProtoId<StatusEffectPrototype> StatusKeyIn = "Electrocution";
     private static readonly ProtoId<DamageTypePrototype> DamageType = "Shock";
@@ -293,6 +295,9 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
     {
+        if (_savingThrow.InitiateSavingThrow(uid, 15))
+            return false;
+
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)
             || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
             return false;
@@ -312,6 +317,9 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         StatusEffectsComponent? statusEffects = null,
         TransformComponent? sourceTransform = null)
     {
+        if (_savingThrow.InitiateSavingThrow(uid, 15))
+            return false;
+
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient))
             return false;
 

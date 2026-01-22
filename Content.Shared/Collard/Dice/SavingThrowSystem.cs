@@ -19,6 +19,38 @@ public sealed partial class SavingThrowSystem : EntitySystem
         var throwResult = _random.Next(1, 21);
         if (throwResult >= difficulty)
         {
+            _popup.PopupEntity(Loc.GetString("dice-saving-throw-successful"), uid, uid);
+            _audio.PlayEntity(new SoundPathSpecifier("/Audio/Collard/Misc/saving_success.ogg"), uid, uid, AudioParams.Default);
+            return true;
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("dice-saving-throw-failed"), uid, uid);
+            _audio.PlayEntity(new SoundPathSpecifier("/Audio/Collard/Misc/saving_failed.ogg"), uid, uid, AudioParams.Default);
+            return false;
+        }
+    }
+
+    public bool InitiateSilentSavingThrow(EntityUid uid, int difficulty)
+    {
+        var throwResult = _random.Next(1, 21);
+        if (throwResult >= difficulty)
+        {
+            _popup.PopupEntity(Loc.GetString("dice-saving-throw-successful"), uid, uid);
+            return true;
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("dice-saving-throw-failed"), uid, uid);
+            return false;
+        }
+    }
+
+    public bool InitiateSavingThrowPredicted(EntityUid uid, int difficulty)
+    {
+        var throwResult = _random.Next(1, 21);
+        if (throwResult >= difficulty)
+        {
             _popup.PopupPredicted(Loc.GetString("dice-saving-throw-successful"), uid, uid);
             _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Collard/Misc/saving_success.ogg"), uid, uid, AudioParams.Default);
             return true;
@@ -31,7 +63,7 @@ public sealed partial class SavingThrowSystem : EntitySystem
         }
     }
 
-    public bool InitiateSilentSavingThrow(EntityUid uid, int difficulty)
+    public bool InitiateSilentSavingThrowPredicted(EntityUid uid, int difficulty)
     {
         var throwResult = _random.Next(1, 21);
         if (throwResult >= difficulty)
