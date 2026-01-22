@@ -15,6 +15,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Events;
+using Content.Shared.Collard.Dice; //collard-SavingThrows
+using Robust.Shared.Timing; //collard-SavingThrows
 
 namespace Content.Shared.Slippery;
 
@@ -30,10 +32,13 @@ public sealed class SlipperySystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SpeedModifierContactsSystem _speedModifier = default!;
+    [Dependency] private readonly SavingThrowSystem _savingThrow = default!; //collard-SavingThrows
+    [Dependency] private readonly IGameTiming _gameTiming = default!; //collard-SavingThrows
 
     private EntityQuery<KnockedDownComponent> _knockedDownQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<SlidingComponent> _slidingQuery;
+    private TimeSpan _nextSlip; //collard-SavingThrows
 
     public override void Initialize()
     {
@@ -129,6 +134,17 @@ public sealed class SlipperySystem : EntitySystem
                 EnsureComp<SlidingComponent>(other);
         }
 
+        //collard-SavingThrows-start
+        if (_nextSlip > _gameTiming.CurTime)
+            return;
+
+        if (_savingThrow.InitiateSavingThrow(other, 10))
+        {
+            _nextSlip = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(1));
+            return;
+        }
+        //collard-SavingThrows-end
+
         // Preventing from playing the slip sound and stunning when you are already knocked down.
         if (!knockedDown)
         {
@@ -155,6 +171,7 @@ public sealed class SlipperySystem : EntitySystem
 
         // Slippery is so tied to knockdown that we really just need to force it here.
         _stun.TryKnockdown(other, component.SlipData.KnockdownTime, force: true);
+        _nextSlip = _gameTiming.CurTime.Add(TimeSpan.FromSeconds(1)); //collard-SavingThrows
 
         _adminLogger.Add(LogType.Slip, LogImpact.Low, $"{ToPrettyString(other):mob} slipped on collision with {ToPrettyString(uid):entity}");
     }
