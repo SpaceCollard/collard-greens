@@ -295,9 +295,6 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
     {
-        if (_savingThrow.InitiateSavingThrow(uid, 15))
-            return false;
-
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)
             || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
             return false;
@@ -317,9 +314,6 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         StatusEffectsComponent? statusEffects = null,
         TransformComponent? sourceTransform = null)
     {
-        if (_savingThrow.InitiateSavingThrow(uid, 15))
-            return false;
-
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient))
             return false;
 
@@ -379,6 +373,9 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         int? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null)
     {
+        if (_savingThrow.InitiateSavingThrow(uid, 15))
+            return false;
+
         if (siemensCoefficient <= 0)
             return false;
 
