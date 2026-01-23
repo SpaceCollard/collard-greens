@@ -71,6 +71,12 @@ public sealed class SlipperySystem : EntitySystem
         SlipperyComponent component,
         ref StepTriggerAttemptEvent args)
     {
+        if (!_gameTiming.IsFirstTimePredicted)
+        {
+            args.Continue = false;
+            args.Cancelled = true;
+            return;
+        }
         args.Continue |= CanSlip(uid, args.Tripper);
     }
 

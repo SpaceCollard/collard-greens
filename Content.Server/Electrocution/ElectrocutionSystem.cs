@@ -55,7 +55,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly SavingThrowSystem _savingThrow = default!;
+    [Dependency] private readonly SavingThrowSystem _savingThrow = default!; //collard-SavingThrows
 
     private static readonly ProtoId<StatusEffectPrototype> StatusKeyIn = "Electrocution";
     private static readonly ProtoId<DamageTypePrototype> DamageType = "Shock";
@@ -373,8 +373,10 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         int? shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
         StatusEffectsComponent? statusEffects = null)
     {
+        //collard-SavingThrows-start
         if (_savingThrow.InitiateSavingThrow(uid, 15))
             return false;
+        //collard-SavingThrows-end
 
         if (siemensCoefficient <= 0)
             return false;
