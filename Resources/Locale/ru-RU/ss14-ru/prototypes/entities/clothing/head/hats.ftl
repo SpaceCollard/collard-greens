@@ -174,6 +174,6 @@ ent-ClothingHeadHatBeretCommand = берет командования
     .desc = Берет с логотипом NanoTrasen. Он имеет ауру авторитета.
 ent-ClothingHeadHatCommandSoft = кепка командования
     .desc = Бейсболка в выделяющемся синем оттенке командования.
-ent-ClothingHeadHatCommandSoftFlipped = { ent-ent-ClothingHeadHatCommandSoft }
+ent-ClothingHeadHatCommandSoftFlipped = { ent-ClothingHeadHatCommandSoft }
     .desc = { ent-ClothingHeadHatCommandSoft.desc }
     .suffix = Перевёрнутый
