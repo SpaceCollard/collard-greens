@@ -170,5 +170,3 @@ ent-SurveillanceCameraWirelessRouterXenoborgCircuitboard = маршрутиза�
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-SmartFridgeCircuitboard = умный холодильник (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
-ent-WeaponEnergyTurretCommandMachineCircuitboard = охранная турель (машинная плата)
-    .desc = { ent-BaseMachineCircuitboard.desc }
