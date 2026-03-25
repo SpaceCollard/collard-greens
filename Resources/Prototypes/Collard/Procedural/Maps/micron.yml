@@ -1,0 +1,27 @@
+- type: dungeonRoom
+  id: MicronBar1
+  size: 13,9
+  atlas: /Maps/Collard/Dungeon/RandomMap/Micronrandom.yml
+  offset: 0,0
+  tags:
+  - BarMicron
+
+# - type: dungeonRoom
+#   id: BagelTheater3
+#   size: 11,8
+#   atlas: /Maps/Dungeon/RandomMap/bagelrandom.yml
+#   offset: -1,9
+#   tags:
+#   - TheaterBagel
+
+- type: entity
+  id: MicronBarRoomMarker
+  parent: BaseRoomMarker
+  name: Micron Bar interior marker
+  components:
+  - type: RoomFill
+    rotation: false
+    maxSize: 13, 9
+    roomWhitelist:
+      tags:
+      - BarMicron
