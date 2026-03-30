@@ -2,7 +2,31 @@
   id: MicronBar1
   size: 13,9
   atlas: /Maps/Collard/Dungeon/RandomMap/Micronrandom.yml
-  offset: 0,0
+  offset: 14,0
+  tags:
+  - BarMicron
+
+- type: dungeonRoom
+  id: MicronBar2
+  size: 13,9
+  atlas: /Maps/Collard/Dungeon/RandomMap/Micronrandom.yml
+  offset: 28,0
+  tags:
+  - BarMicron
+
+- type: dungeonRoom
+  id: MicronBar3
+  size: 13,9
+  atlas: /Maps/Collard/Dungeon/RandomMap/Micronrandom.yml
+  offset: 42,0
+  tags:
+  - BarMicron
+
+- type: dungeonRoom
+  id: MicronBar4
+  size: 13,9
+  atlas: /Maps/Collard/Dungeon/RandomMap/Micronrandom.yml
+  offset: 56,0
   tags:
   - BarMicron
 
