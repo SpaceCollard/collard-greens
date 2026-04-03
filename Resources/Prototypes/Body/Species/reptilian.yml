@@ -294,14 +294,14 @@
   id: OrganReptilianStomach
   components:
   - type: Stomach
-    specialDigestible:
-      tags:
-      - Fruit
-      - ReptilianFood
-      - Meat
-      - Pill
-      - Crayon
-      - Paper
+  #   specialDigestible: || collard-Weh
+  #     tags:
+  #     - Fruit
+  #     - ReptilianFood
+  #     - Meat
+  #     - Pill
+  #     - Crayon
+  #     - Paper
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
