@@ -108,5 +108,14 @@ public sealed class RollCommand : LocalizedEntityCommands
         entityUid = EntityUid.Invalid;
         return false;
     }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length != 1)
+            return CompletionResult.Empty;
+
+        return CompletionResult.FromHint(
+            Loc.GetString("cmd-roll-completion"));
+    }
 }
 

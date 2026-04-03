@@ -148,14 +148,20 @@ public sealed class CheckCommand : LocalizedEntityCommands
         if (args.Length == 1)
         {
             return CompletionResult.FromHint(
-                Loc.GetString("cmd-addaction-player-completion"));
+                Loc.GetString("cmd-check-checkname-completion"));
         }
 
-        if (args.Length != 2)
+        if (args.Length == 2)
+        {
+            return CompletionResult.FromHint(
+                Loc.GetString("cmd-check-dc-completion"));
+        }
+
+        if (args.Length != 3)
             return CompletionResult.Empty;
 
         return CompletionResult.FromHint(
-            Loc.GetString("cmd-addaction-action-completion"));
+            Loc.GetString("cmd-check-advantage-completion"));
     }
 }
 
