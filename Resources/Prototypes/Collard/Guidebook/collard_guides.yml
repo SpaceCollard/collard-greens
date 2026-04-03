@@ -67,7 +67,7 @@
 - type: guideEntry
   id: CasinoGaming
   name: guide-entry-casino
-  text: "/ServerInfo/Guidebook/Collard/RP/Casino.xml"
+  text: "/ServerInfo/Guidebook/Collard/RP/CasinoGaming.xml"
   children:
   - CheckCommand
   - RollCommand

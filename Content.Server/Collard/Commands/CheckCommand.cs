@@ -81,7 +81,7 @@ public sealed class CheckCommand : LocalizedEntityCommands
             }
         }
 
-        shell.WriteLine(Loc.GetString("cmd-check-result", ("value", roll)));
+        shell.WriteLine(Loc.GetString("cmd-check-result", ("roll1", roll1), ("roll2", roll2), ("value", roll)));
 
         if (player is null) return;
         if (!TryParseUid(player, shell, _entManager, out var entityUid))
