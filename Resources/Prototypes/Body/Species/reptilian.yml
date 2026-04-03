@@ -292,9 +292,9 @@
 - type: entity
   parent: [ OrganBaseStomach, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianStomach
-  components:
-  - type: Stomach
-  #   specialDigestible: || collard-Weh
+  # components: || collard-Weh
+  # - type: Stomach
+  #   specialDigestible:
   #     tags:
   #     - Fruit
   #     - ReptilianFood
