@@ -39919,10 +39919,6 @@ entities:
     - type: Transform
       pos: 26.5,16.5
       parent: 2
-    - type: PoweredLight
-      isBlinking: True
-      lastGhostBlink: 3299.5967004
-    - type: Timer
   - uid: 1428
     components:
     - type: Transform
