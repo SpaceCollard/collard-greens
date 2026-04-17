@@ -12,15 +12,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Widgets;
 [GenerateTypedNameReferences]
 public sealed partial class GhostGui : UIWidget
 {
-
-    // collard-GhostRespawn-start
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-
-    private TimeSpan? _timeOfDeath;
-    private float _minTimeToRespawn;
-    public GhostRespawnRulesWindow RespawnRulesWindow { get; }
-    // collard-GhostRespawn-end
+    public GhostRespawnRulesWindow RespawnRulesWindow { get; } // collard-GhostRespawn
     public GhostTargetWindow TargetWindow { get; }
 
     public event Action? RequestWarpsPressed;
