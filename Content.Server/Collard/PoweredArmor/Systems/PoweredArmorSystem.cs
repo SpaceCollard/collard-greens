@@ -1,30 +1,21 @@
 using Content.Server.Power.Components;
-using Content.Server.Power.Events;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Damage.Events;
 using Content.Shared.Examine;
 using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
-using Content.Shared.Popups;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Collard.PoweredArmor;
-using Content.Shared.Stunnable;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Inventory;
-using Content.Shared.Silicons.Borgs;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using Content.Shared.Armor;
-using Content.Shared.Damage.Prototypes;
 using Robust.Server.Audio;
-using Robust.Shared.Player;
 using Robust.Shared.Audio;
-using Content.Server.Speech.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Network;
 
@@ -33,7 +24,6 @@ namespace Content.Server.Collard.PoweredArmor.Systems
     public sealed class PoweredArmorSystem : EntitySystem
     {
         [Dependency] private readonly RiggableSystem _riggableSystem = default!;
-        [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedBatterySystem _battery = default!;
         [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
         [Dependency] private readonly ExamineSystemShared _examine = default!;
