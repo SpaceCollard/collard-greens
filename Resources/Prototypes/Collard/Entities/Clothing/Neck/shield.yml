@@ -1,16 +1,17 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: Clothing
   id: ClothingNeckShieldBase
   name: neck shield
   description: A shield that protects the wearer while charged.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Melee/stunbaton.rsi
-    layers:
-    - state: stunbaton_off
-      map: [ "enum.ToggleableVisuals.Layer" ]
+    sprite: Collard/Clothing/Neck/neckshield.rsi
+    state: icon
   - type: Clothing
-    sprite: Clothing/Neck/mantles/capmantle.rsi
+    quickEquip: true
+    slots:
+    - neck
+    sprite: Collard/Clothing/Neck/neckshield.rsi
   - type: PoweredArmor
     modifiers:
       coefficients:
@@ -24,6 +25,7 @@
   - type: GroupExamine
   - type: Item
     heldPrefix: off
+    sprite: Clothing/Collard/Neck/neckshield.rsi
     size: Normal
   - type: Battery
     maxCharge: 2000
@@ -52,6 +54,7 @@
     materialComposition:
       Steel: 100
       Plastic: 100
+      Glass: 100
   - type: ItemToggle
     onUse: false
     onActivate: false
@@ -67,3 +70,8 @@
   - type: ItemTogglePrefix
     prefixOn: on
     prefixOff: off
+  - type: Tag
+    tags:
+    - Recyclable
+  - type: StaticPrice
+    price: 500
