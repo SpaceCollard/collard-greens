@@ -9,7 +9,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server.Corvax.StationGoal
+namespace Content.Server.Collard.StationGoal
 {
     /// <summary>
     ///     System to spawn paper with station goal.
