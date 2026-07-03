@@ -20,9 +20,7 @@ namespace Content.Server.Collard.StationGoal
         [Dependency] private IRobustRandom _random = default!;
         [Dependency] private FaxSystem _fax = default!;
         [Dependency] private NewsSystem _news = default!;
-        [Dependency] private IPlayerManager _playerManager = default!;
         [Dependency] private StationSystem _station = default!;
-        [Dependency] private IConfigurationManager _cfg = default!;
 
         public override void Initialize()
         {
@@ -61,7 +59,8 @@ namespace Content.Server.Collard.StationGoal
         public bool SendStationGoal(EntityUid ent, StationGoalPrototype goal)
         {
             var printout = new FaxPrintout(
-                Loc.GetString(goal.Text, ("station", MetaData(ent).EntityName)),
+                Loc.GetString(goal.Text, ("station", MetaData(ent).EntityName),
+                                        ("date", DateTime.Now.AddYears(1000).ToString("dd.MM.yyyy"))),
                 Loc.GetString("station-goal-fax-paper-name"),
                 null,
                 null,
@@ -119,6 +118,43 @@ namespace Content.Server.Collard.StationGoal
             }
 
             _news.TryAddNews(ent, title, content, out _, Loc.GetString("station-goal-news-author"));
+        }
+
+        public bool SendProtoStationGoal(StationGoalPrototype goal)
+        {
+            var faxes = EntityQueryEnumerator<FaxMachineComponent>();
+            var wasSent = false;
+            //foreach (var fax in faxes)
+            while (faxes.MoveNext(out var uid, out var fax))
+            {
+                if (!fax.ReceiveStationGoal) continue;
+
+                if (!TryComp<MetaDataComponent>(_station.GetOwningStation(uid), out var meta))
+                    continue;
+
+                var stationName = meta.EntityName;
+
+                var printout = new FaxPrintout(
+                Loc.GetString(goal.Text, ("station", stationName),
+                                        ("date", DateTime.Now.AddYears(1000).ToString("dd.MM.yyyy"))),
+                Loc.GetString("station-goal-fax-paper-name"),
+                null,
+                null,
+                "paper_stamp-centcom",
+                [new() { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#006600") }]
+            );
+                _fax.Receive(uid, printout, Loc.GetString("fax-component-sender-name-centcom"), fax);
+                var ccFaxes = EntityQueryEnumerator<FaxMachineComponent>();
+                while (ccFaxes.MoveNext(out var ccFaxUid, out var ccFax))
+                {
+                    if (!ccFax.CentcomFax) continue;
+                    _fax.Receive(ccFaxUid, printout, Loc.GetString("fax-component-sender-name-centcom"), ccFax);
+                }
+
+                wasSent = true;
+            }
+
+            return wasSent;
         }
     }
 }
