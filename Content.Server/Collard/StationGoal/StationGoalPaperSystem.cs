@@ -108,7 +108,10 @@ namespace Content.Server.Collard.StationGoal
 
             var title = Loc.GetString("station-goal-news-title", ("station", stationName));
 
-            var content = Loc.GetString(goal.Text, ("station", stationName));
+
+            var content = Loc.GetString(goal.Text, ("station", stationName),
+                                            ("date", DateTime.Now.AddYears(1000).ToString("dd.MM.yyyy")));
+
             var endPattern = Loc.GetString("station-goal-end");
 
             if (content.EndsWith(endPattern))
