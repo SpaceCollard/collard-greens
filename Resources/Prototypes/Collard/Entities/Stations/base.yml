@@ -4,22 +4,19 @@
   components:
     - type: StationGoal
       goals:
+      - Technologies
+      - Seeds
+      - Chemistry
+      - AllDepartments
+      - Psychologist
+      - Shuttle
       - Singularity
       - SolarPanels
       - Artifacts
-      - Bank
+      - Storage
       - Zoo
       - MiningOutpost
+      - Containment
       - Tesla
-      - SecurityTraining
-      - ShuttleMed
-      - ShuttleSec
-      - ShuttleRnd
-      - ShuttleSrv
-      - ShuttleEmergency
-      - Theatre
-      - CellAI
-      - Botany
-      - Bunker
       - Money1M
       - Money25M
