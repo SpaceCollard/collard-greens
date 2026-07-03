@@ -17,11 +17,11 @@
   text: station-goal-all-departments
 
 - type: stationGoal
-  id: StationGoalPsychologist
+  id: Psychologist
   text: station-goal-psychologist
 
 - type: stationGoal
-  id: StationGoalShuttle
+  id: Shuttle
   text: station-goal-shuttle
 
 - type: stationGoal
@@ -37,7 +37,7 @@
   text: station-goal-artifacts
 
 - type: stationGoal
-  id: StationGoalStorage
+  id: Storage
   text: station-goal-storage
 
 - type: stationGoal
@@ -49,7 +49,7 @@
   text: station-goal-mining-outpost
 
 - type: stationGoal
-  id: StationGoalContainment
+  id: Containment
   text: station-goal-containment
 
 - type: stationGoal
