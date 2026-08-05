@@ -1,7 +1,7 @@
-- type: latheRecipe
-  parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
-  id: MedicalScannerMachineCircuitboard
-  result: MedicalScannerMachineCircuitboard
+# - type: latheRecipe
+#   parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
+#   id: MedicalScannerMachineCircuitboard
+#   result: MedicalScannerMachineCircuitboard
 
 # - type: latheRecipe || collard-LTE
 #   parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]

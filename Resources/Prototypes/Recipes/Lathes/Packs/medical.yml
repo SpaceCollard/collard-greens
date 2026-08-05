@@ -111,5 +111,5 @@
   # collard-CloningResearch-start
   # - CloningPodMachineCircuitboard || collard-LTE
   # - CloningConsoleComputerCircuitboard || collard-LTE
-  - MedicalScannerMachineCircuitboard
+  # - MedicalScannerMachineCircuitboard || collard-LTE
   # collard-CloningResearch-end
